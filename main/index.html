@@ -11,37 +11,44 @@
 </head>
 <body>
   <main class="split">
-    <img src="./assets/IMG_4780.jpg" alt="Mehmet and Maria at sunset" class="hero" />
+    <picture>
+      <source media="(max-width: 720px)" srcset="./assets/IMG_0153.jpg" />
+      <img src="./assets/IMG_4780.jpg" alt="Mehmet and Maria" class="hero" />
+    </picture>
 
     <div class="overlay" aria-hidden="true"></div>
 
     <span class="brand">Çağlıyangil</span>
 
-    <a class="half half-left" href="https://mehmet.cagliyangil.com" aria-label="Mehmet's page"></a>
-    <a class="half half-right" href="https://maria.cagliyangil.com" aria-label="Maria's page"></a>
+    <a class="half half-left desktop-only" href="https://mehmet.cagliyangil.com" aria-label="Mehmet's page"></a>
+    <a class="half half-right desktop-only" href="https://maria.cagliyangil.com" aria-label="Maria's page"></a>
 
-    <span class="divider" aria-hidden="true"></span>
+    <span class="divider desktop-only" aria-hidden="true"></span>
 
     <section class="center">
-      <h1 class="center-title">Mehmet <span class="amp">&amp;</span> Maria</h1>
-      <p class="center-sub">Two people, one Bodrum balcony.</p>
+      <h1 class="center-title">
+        <span class="title-desktop">Mehmet <span class="amp">&amp;</span> Maria</span>
+        <span class="title-mobile">Maria <span class="amp">&amp;</span> Mehmet</span>
+      </h1>
+      <p class="center-sub">Bodrum · Aegean Coast</p>
       <p class="center-lede">
-        Product and marketing, built slowly by the sea.
-        Pick a side — we're both happy to say hi.
+        A product manager and an influencer marketing lead — passionate about
+        what we build, and about each other. Pick a side, we're both happy to
+        say hi.
       </p>
       <div class="ctas">
-        <a class="cta" href="https://mehmet.cagliyangil.com">
+        <a class="cta cta-mehmet" href="https://mehmet.cagliyangil.com">
           <span class="cta-label">Mehmet</span>
           <span class="cta-sub">Product Manager</span>
         </a>
-        <a class="cta" href="https://maria.cagliyangil.com">
+        <a class="cta cta-maria" href="https://maria.cagliyangil.com">
           <span class="cta-label">Maria</span>
           <span class="cta-sub">Influencer Marketing</span>
         </a>
       </div>
     </section>
 
-    <footer class="hints">
+    <footer class="hints desktop-only">
       <span class="hint hint-left">← Mehmet</span>
       <span class="hint hint-right">Maria →</span>
     </footer>

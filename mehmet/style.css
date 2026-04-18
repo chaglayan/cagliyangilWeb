@@ -4,6 +4,7 @@
   --gold: #c4813a;
   --navy: #1a2340;
   --muted: rgba(43, 42, 38, 0.65);
+  --rule: rgba(43, 42, 38, 0.14);
 }
 
 * {
@@ -41,7 +42,7 @@ a {
   mix-blend-mode: difference;
   padding: 6px 10px;
   transition: opacity 0.3s ease;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .back:hover {
@@ -51,7 +52,8 @@ a {
 .hero {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 78vh;
+  min-height: 520px;
   overflow: hidden;
 }
 
@@ -59,7 +61,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 30%;
   display: block;
 }
 
@@ -69,41 +71,37 @@ a {
   pointer-events: none;
   background: linear-gradient(
     to bottom,
-    rgba(246, 241, 231, 0) 55%,
-    rgba(246, 241, 231, 0.6) 85%,
+    rgba(246, 241, 231, 0) 70%,
+    rgba(246, 241, 231, 0.55) 90%,
     var(--ivory) 100%
   );
 }
 
 .content {
-  max-width: 880px;
-  margin: -90px auto 0;
-  padding: 0 32px 96px;
-  position: relative;
-  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 56px 32px 96px;
 }
 
 .intro {
-  background: var(--ivory);
-  padding: 40px 40px 32px;
-  border: 1px solid rgba(43, 42, 38, 0.08);
-  box-shadow: 0 20px 60px rgba(26, 35, 64, 0.08);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 36px;
 }
 
 .name {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: 44px;
-  line-height: 1.1;
+  font-size: 52px;
+  line-height: 1.05;
   letter-spacing: 0.01em;
 }
 
 .tagline {
-  margin-top: 10px;
+  margin-top: 12px;
   font-family: "Jost", sans-serif;
   font-weight: 200;
-  font-size: 14px;
-  letter-spacing: 0.16em;
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -112,34 +110,134 @@ a {
   margin-top: 22px;
   font-family: "Jost", sans-serif;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 60ch;
+  font-size: 16.5px;
+  line-height: 1.85;
+  max-width: 62ch;
 }
 
-.cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+.bio + .bio {
+  margin-top: 14px;
+}
+
+.block {
   margin-top: 56px;
-  padding: 0 4px;
 }
 
-.col-title {
+.block-title {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 22px;
+  font-size: 26px;
   color: var(--gold);
-  margin-bottom: 16px;
+  margin-bottom: 22px;
   letter-spacing: 0.02em;
+}
+
+.company {
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.company:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.company-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.company-name {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+}
+
+.company-faint {
+  color: var(--muted);
+  font-weight: 300;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.company-meta {
+  font-family: "Jost", sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.roles {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-left: 1px solid var(--rule);
+  padding: 4px 0 4px 20px;
+  margin-left: 4px;
+}
+
+.roles li {
+  position: relative;
+}
+
+.roles li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -26px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.role-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.role-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.role-dates {
+  font-family: "Jost", sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.role-desc {
+  margin-top: 8px;
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 62ch;
+  color: rgba(43, 42, 38, 0.88);
 }
 
 .list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .list li {
@@ -147,6 +245,12 @@ a {
   font-weight: 300;
   font-size: 15px;
   line-height: 1.6;
+}
+
+.list li strong {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .list a {
@@ -160,14 +264,46 @@ a {
   border-bottom-color: var(--gold);
 }
 
-.cta {
+.list.tags {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.list.tags li {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 56px;
+}
+
+.cta-block {
   margin-top: 64px;
-  padding: 0 4px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.cta-intro {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 52ch;
+  color: rgba(43, 42, 38, 0.88);
+  margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 8px;
   padding: 14px 28px;
   font-family: "Jost", sans-serif;
   font-weight: 300;
@@ -200,24 +336,46 @@ a {
 
 @media (max-width: 720px) {
   .hero {
-    height: 60vh;
+    height: 62vh;
+    min-height: 420px;
+  }
+
+  .hero-img {
+    object-position: center 28%;
   }
 
   .content {
-    margin-top: -60px;
-    padding: 0 20px 72px;
-  }
-
-  .intro {
-    padding: 28px 24px 24px;
+    padding: 40px 22px 72px;
   }
 
   .name {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .bio {
-    font-size: 15px;
+    font-size: 15.5px;
+  }
+
+  .block {
+    margin-top: 44px;
+  }
+
+  .block-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .company-name {
+    font-size: 21px;
+  }
+
+  .role-head {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .role-dates {
+    font-size: 11px;
   }
 
   .cols {
